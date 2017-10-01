@@ -9,9 +9,9 @@
 
     var shuMainController = function ($scope, $http) {
         var person = {
-            firstName: 'Sleeping',
+            firstName: 'Cute',
             lastName: 'Pappy',
-            imageSrc: 'https://i.pinimg.com/736x/6f/ca/f0/6fcaf0ef07eaaa5a229d19245f6de37a--pretty-in-pink-the-pink.jpg'
+            imageSrc: 'https://68.media.tumblr.com/avatar_29bdba358c83_128.png'
         };
         $scope.person = person;
 
