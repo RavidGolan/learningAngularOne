@@ -25,7 +25,7 @@
 
         /*    $http.get("https://api.github.com/users/ravidgolan")
          .then(onUserComplete, onError);*/
-        $http.get("https://api.shushushu.github.com/users/ravidgolan")
+        $http.get("https://api.github.com/users/ravidgolan")
             .then(onUserComplete, onError);
 
         $scope.message = "Hello:)"

@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="githubViewer">
-    <head>
-        <meta charset="UTF-8">
-        <title>shushushu</title>
-    </head>
+<html ng-app="githubViewer">
 
-    <script data-require="angular.js@*"
-            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-    <script src="shushushu.js"></script>
+<head>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="script.js"></script>
+</head>
 
-    <body ng-conroller="MainController">
-        {{ 843 / 42 }}
-        <h1>{{message}}</h1>
-        <div>
-            <div>First Name: {{person.firstName}}</div>
-            <div>Last Name: {{person.lastName}}</div>
-            <div>
-                <!--the browser render the page before angular is running, so the browse is trying to download image with url: {{person.imageSrc}}
-                    the solution is: ng-src-->
-                <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
-            </div>
-        </div>
+<body ng-controller="MainController">
 
-        <div>{{error}}</div>
+{{ 843 / 42 }}
 
-        <div>
-            <div>My User Name: {{user.name}}</div>
-            <div>
-                <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
-            </div>
-        </div>
+<div>
+    <div>First Name: {{person.firstName}}</div>
+    <div>Last Name: {{person.lastName}}</div>
+    <div>
+        <!--the browser render the page before angular is running, so the browse is trying to download image with url: {{person.imageSrc}}
+            the solution is: ng-src-->
+        <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
+    </div>
+</div>
 
-    </body>
+<h1>{{message}}</h1>
+
+<div>
+    {{ error}}
+</div>
+
+<div>
+    <div>
+        Name: {{user.name}}
+    </div>
+    <div>
+        Location: {{user.location}}
+    </div>
+    <div>
+        <img src="{{user.avatar_url}}" title="{{user.name}}">
+    </div>
+</div>
+
+</body>
 </html>
