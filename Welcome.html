@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="githubViewer">
+    <head>
+        <meta charset="UTF-8">
+        <title>shushushu</title>
+    </head>
+
+    <script data-require="angular.js@*"
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="shushushu.js"></script>
+
+    <body ng-conroller="MainController">
+        {{ 843 / 42 }}
+        <h1>{{message}}</h1>
+        <div>
+            <div>First Name: {{person.firstName}}</div>
+            <div>Last Name: {{person.lastName}}</div>
+            <div>
+                <!--the browser render the page before angular is running, so the browse is trying to download image with url: {{person.imageSrc}}
+                    the solution is: ng-src-->
+                <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
+            </div>
+        </div>
+
+        <div>{{error}}</div>
+
+        <div>
+            <div>My User Name: {{user.name}}</div>
+            <div>
+                <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
+            </div>
+        </div>
+
+    </body>
+</html>
