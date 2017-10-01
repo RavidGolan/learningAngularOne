@@ -34,7 +34,8 @@
                 .then(onUserComplete, onError);
         };
 
-        $scope.message = "GitHub Viewer:)"
+        $scope.message = "GitHub Viewer:)";
+        $scope.repoSortOrder = "-stargazers_count";
     };
 
     shuApp.controller("MainController", shuMainController);
