@@ -1,5 +1,5 @@
 /**
- * Created by ravid.tanami on 02/10/2017.
+ * Created by ravid.tanami on 2 Oct 2017.
  */
 
 (function(){
