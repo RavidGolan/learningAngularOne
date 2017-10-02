@@ -6,17 +6,17 @@
     // [] - dependencies from other modules
     var shuApp = angular.module("githubViewer", []);
 
-    var shuMainController = function ($scope, $http, $interval, $log, $anchorScroll, $location) {
+    var shuMainController = function ($scope, github, $interval, $log, $anchorScroll, $location) {
 
-        var onUserComplete = function(response) {
-            $scope.user = response.data;
+        var onUserComplete = function(data) {
+            $scope.user = data;
 
-            $http.get($scope.user.repos_url)
+            github.getRepos($scope.user)
                 .then(onRepos, onError)
         };
         
-        var onRepos = function (response) {
-            $scope.repos = response.data;
+        var onRepos = function (data) {
+            $scope.repos = data;
 
             $location.hash("userDetails");
             $anchorScroll();
@@ -40,7 +40,7 @@
 
         $scope.search = function (username) {
             $log.info("Searching for: " + username);
-            $http.get("https://api.github.com/users/" + username)
+            github.getUser(username)
                 .then(onUserComplete, onError);
             if (countdownInterval) {
                 $interval.cancel(countdownInterval);
