@@ -1,7 +1,6 @@
 /**
- * Created by ravid.tanami on 28/09/2017.
+ * Created by ravid.tanami on 02/10/2017.
  */
-// document.write("Hello:)")
 
 (function(){
     // [] - dependencies from other modules
