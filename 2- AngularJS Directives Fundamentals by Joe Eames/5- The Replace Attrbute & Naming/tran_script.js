@@ -24,9 +24,9 @@ angular.module('app').controller('mainCtrl', function ($scope) {
     }
 });
 
-angular.module('app').directive('userInfoCard', function () {
+angular.module('app').directive('rgUserInfoCard', function () {
     return {
-        templateUrl: "tra_userInfoCard.html",
+        templateUrl: "tran_userInfoCard.html",
         restrict: "E",
         replace: true
     }
