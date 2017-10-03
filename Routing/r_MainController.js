@@ -25,7 +25,10 @@
                 $interval.cancel(countdownInterval);
                 $scope.countdown = null;
             }
+
             // go the the next route- user view
+            // change the client fragment to #/user/someuser
+            $location.path("/user/" + username);
         };
 
         $scope.username = "angular";

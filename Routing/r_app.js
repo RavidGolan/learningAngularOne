@@ -9,6 +9,10 @@
                 templateUrl: "r_main.html",
                 controller: "MainController"
             })
-            .otherwise({redirectTo:"/main"})
+            .when("/user/:username", {
+                templateUrl: "r_userdetails.html",
+                controller: "UserController"
+            })
+            .otherwise({redirectTo: "/main"})
     });
 }());
