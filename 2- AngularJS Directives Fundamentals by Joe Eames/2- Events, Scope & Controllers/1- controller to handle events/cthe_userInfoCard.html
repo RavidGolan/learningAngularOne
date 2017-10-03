@@ -1,13 +1,19 @@
-Name: {{user.name}} <br /><br />
+<div class="panel panel-primary">
+    <div class="panel-heading">{{user.name}}</div>
 
-<div ng-show='user.address'>Address: <br />
-    {{user.address.street}} <br />
-    {{user.address.city}}<br />
-    {{user.address.planet}}
-</div><br />
+    <div class="panel-body">
+        <div ng-show='user.address'>
+            <h4>Address:</h4>
+            {{user.address.street}} <br />
+            {{user.address.city}}<br />
+            {{user.address.planet}}
+        </div><br />
 
-<div>Friends:
-    <div ng-repeat='friend in user.friends'>
-        {{friend}}
+        <h4>Friends:</h4>
+        <ul>
+            <li ng-repeat='friend in user.friends'>
+                {{friend}}
+            </li>
+        </ul>
     </div>
 </div>
