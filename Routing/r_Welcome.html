@@ -2,28 +2,16 @@
 <html ng-app="githubViewer">
 
     <head>
-        <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-        <script src="r_shushushu.js"></script>
+        <script data-require="angular.js@*" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+        <script data-require="angular-route@*"  src="https://code.angularjs.org/1.2.14/angular-route.js"></script>
+        <script src="r_app.js"></script>
+        <script src="r_MainController.js"></script>
         <script src="r_github.js"></script>
     </head>
 
-    <body ng-controller="MainController">
-        <h1>{{message}}</h1>
-
-        <div>{{ error}}</div>
-
-        {{ countdown }}
-        {{ username }}
-        <form name="searchUser"  ng-submit="search(username)">
-            <input type="search" required placeholder="Username to find" ng-model="username" />
-            <input type="submit" value="Search" />
-        </form>
-        <!--<form name="searchUser">
-            <input type="search" required placeholder="Username to find" ng-model="username" />
-            <input type="submit" value="Search" ng-click="search(username)" />
-        </form>-->
-
-    <div ng-include="'s_ghs_userdetails.html'" ng-show="user"></div>
-
+    <body>
+        <h1>Github Viewer</h1>
+        <div ng-view></div>
     </body>
+
 </html>

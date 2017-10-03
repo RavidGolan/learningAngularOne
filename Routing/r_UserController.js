@@ -1,10 +1,9 @@
 /**
- * Created by ravid.tanami on 2 Oct 2017.
+ * Created by ravid.tanami on 03/10/2017.
  */
-
 (function(){
     // [] - dependencies from other modules
-    var shuApp = angular.module("githubViewer", []);
+    var shuApp = angular.module("githubViewer");
 
     var shuMainController = function ($scope, github, $interval, $log, $anchorScroll, $location) {
 
@@ -14,7 +13,7 @@
             github.getRepos($scope.user)
                 .then(onRepos, onError)
         };
-        
+
         var onRepos = function (data) {
             $scope.repos = data;
 
@@ -60,8 +59,3 @@
     // for minified:
     // shuApp.controller("MainController", ["$scope", "$http", "$interval", shuMainController]);
 }());
-
-
-
-
-
