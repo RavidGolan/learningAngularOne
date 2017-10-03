@@ -1,0 +1,11 @@
+<div>
+    {{username}}
+    {{reponame}}
+    Issues: {{open_issues}}
+
+    <div ng-repeat="contributor in contributors | orderBy:'-stargazers_count'">
+        Name: {{contributor.login}}
+        Contributions: {{contributor.contributions}}
+        <img width="100px" ng-src={{contributor.avatar_url}}>
+    </div>
+</div>
