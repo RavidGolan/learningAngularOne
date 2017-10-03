@@ -5,7 +5,7 @@
     // [] - dependencies from other modules
     var shuApp = angular.module("githubViewer");
 
-    var shuUserController = function ($scope, github, $routeParams) {
+    var shuUserController = function ($scope, github, $routeParams, $location) {
 
         var onUserComplete = function(data) {
             $scope.user = data;
@@ -26,6 +26,10 @@
         $scope.repoSortOrder = "-stargazers_count";
         github.getUser($scope.username)
             .then(onUserComplete, onError);
+
+        $scope.shushushu = function (reponame) {
+            $location.path("/repo/" + $scope.username + '/' + reponame);
+        }
     };
 
     shuApp.controller("UserController", shuUserController);

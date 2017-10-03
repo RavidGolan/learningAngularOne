@@ -2,11 +2,11 @@
     {{ countdown }}
     {{ username }}
     <form name="searchUser"  ng-submit="search(username)">
-        <input type="text" required placeholder="back and forward does not save the text" />
+        <input type="text" placeholder="back and forward does not save the text" />
         <input type="search" required placeholder="Username to find" ng-model="username" />
         <input type="submit" value="Search" />
     </form>
 
-    <div ng-include="'s_ghs_userdetails.html'" ng-show="user"></div>
+    <div ng-include="'r_userdetails.html'" ng-show="user"></div>
 
 </div>
