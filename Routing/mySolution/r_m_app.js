@@ -6,15 +6,15 @@
     shuApp.config(function ($routeProvider) {
         $routeProvider
             .when("/main", {
-                templateUrl: "r_main.html",
+                templateUrl: "r_m_main.html",
                 controller: "MainController"
             })
             .when("/user/:username", {
-                templateUrl: "r_userdetails.html",
+                templateUrl: "r_m_userdetails.html",
                 controller: "UserController"
             })
             .when("/repos/:username/:reponame", {
-                templateUrl: "r_repo.html",
+                templateUrl: "r_m_repo.html",
                 controller: "RepoController"
             })
             .otherwise({redirectTo: "/main"})

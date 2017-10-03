@@ -5,8 +5,6 @@
     var shuApp = angular.module("githubViewer");
 
     var shuRepoController = function ($scope, github, $routeParams) {
-        debugger;
-
         var onContributors = function (data) {
             $scope.contributors = data;
         };
@@ -19,7 +17,6 @@
         $scope.reponame = $routeParams.reponame;
         github.newGetRepo($scope.username, $scope.reponame)
             .then(function (repo) {
-                debugger;
                 $scope.open_issues = repo.open_issues;
 
                 github.getContributors(repo)

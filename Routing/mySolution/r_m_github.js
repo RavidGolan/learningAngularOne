@@ -26,7 +26,7 @@
         };
 
         var onError = function (error) {
-            debugger;
+            console.error("error from github: " + error);
         };
 
         var newGetRepo = function (username, reponame) {
