@@ -13,7 +13,7 @@
                 templateUrl: "r_m_userdetails.html",
                 controller: "UserController"
             })
-            .when("/repos/:username/:reponame", {
+            .when("/repo/:username/:reponame", {
                 templateUrl: "r_m_repo.html",
                 controller: "RepoController"
             })

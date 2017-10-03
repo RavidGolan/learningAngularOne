@@ -28,7 +28,7 @@
             .then(onUserComplete, onError);
 
         $scope.searchRepo = function (reponame) {
-            $location.path("/repos/" + $scope.username + '/' + reponame);
+            $location.path("/repo/" + $scope.username + '/' + reponame);
         }
     };
 
