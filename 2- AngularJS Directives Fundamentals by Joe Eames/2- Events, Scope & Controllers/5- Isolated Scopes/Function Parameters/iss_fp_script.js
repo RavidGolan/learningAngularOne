@@ -78,13 +78,7 @@ angular.module('app').directive('userInfoCard', function () {
                 $scope.collapsed = !$scope.collapsed;
             };
 
-            $scope.removing = false;
-            $scope.startRemove = function () {
-                $scope.removing = true;
-            };
-            $scope.cancelRemove = function () {
-                $scope.removing = false;
-            };
+            // remove friend as isolated directive
             $scope.removeFriend = function (friend) {
                 var idx = $scope.user.friends.indexOf(friend);
                 if (idx > -1) {
@@ -103,6 +97,52 @@ angular.module('app').directive('userInfoCard', function () {
                 $scope.collapsedState = !$scope.collapsedState;
             }
         }*/
+    }
+});
+
+// remove friend as Shared directive
+/*angular.module('app').directive('removeFriend', function () {
+    return {
+        templateUrl: 'iss_fp_removeFriend.html',
+        restrict: 'E',
+        controller: function ($scope) {
+            $scope.removing = false;
+            $scope.startRemove = function () {
+                $scope.removing = true;
+            };
+            $scope.cancelRemove = function () {
+                $scope.removing = false;
+            };
+            $scope.removeFriend = function (friend) {
+                var idx = $scope.user.friends.indexOf(friend);
+                if (idx > -1) {
+                    $scope.user.friends.splice(idx, 1);
+                }
+            }
+        }
+    }
+});*/
+
+// remove friend as isolated directive
+angular.module('app').directive('removeFriend', function () {
+    return {
+        templateUrl: 'iss_fp_removeFriend.html',
+        restrict: 'E',
+        scope: {
+            notifyParent: '&method'
+        },
+        controller: function ($scope) {
+            $scope.removing = false;
+            $scope.startRemove = function () {
+                $scope.removing = true;
+            };
+            $scope.cancelRemove = function () {
+                $scope.removing = false;
+            };
+            $scope.confirmRemove = function () {
+                $scope.notifyParent();
+            };
+        }
     }
 });
 
