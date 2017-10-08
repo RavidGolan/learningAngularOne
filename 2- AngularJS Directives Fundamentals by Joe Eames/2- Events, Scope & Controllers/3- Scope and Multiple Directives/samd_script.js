@@ -5,7 +5,7 @@
 angular.module('app', []);
 
 angular.module('app').controller('mainCtrl', function ($scope) {
-    $scope.user = {
+    /*$scope.user = {
         name: 'Luke Skywalker',
         address: {
             street: 'PO Box 123',
@@ -17,7 +17,7 @@ angular.module('app').controller('mainCtrl', function ($scope) {
             'Leia',
             'Chewbacca'
         ]
-    };
+    };*/
 
     $scope.user1 = {
         name: 'Luke Skywalker',
