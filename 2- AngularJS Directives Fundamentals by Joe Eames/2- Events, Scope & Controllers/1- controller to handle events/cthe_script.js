@@ -22,6 +22,10 @@ angular.module('app').controller('mainCtrl', function ($scope) {
     $scope.userWithoutAddress = {
         name: 'Ravid Golan'
     }
+
+    $scope.knightMe = function (user) {
+        user.rank = "knight";
+    }
 });
 
 angular.module('app').directive('userInfoCard', function () {

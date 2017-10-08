@@ -15,5 +15,9 @@
                 {{friend}}
             </li>
         </ul>
+        <div ng-show="user.rank">
+            Rank: {{user.rank}}
+        </div>
+        <button ng-show="!user.rank" class="btn btn-success" ng-click="knightMe(user)">Knight Me</button>
     </div>
 </div>
