@@ -23,14 +23,19 @@ angular.module('app').controller('mainCtrl', function ($scope) {
         name: 'Ravid Golan'
     }
 
-    $scope.knightMe = function (user) {
+    /*$scope.knightMe = function (user) {
         user.rank = "knight";
-    }
+    }*/
 });
 
 angular.module('app').directive('userInfoCard', function () {
     return {
         templateUrl: "cthe_userInfoCard.html",
-        restrict: "E"
+        restrict: "E",
+        controller: function ($scope) {
+            $scope.knightMe = function (user) {
+                user.rank = "knight";
+            }
+        }
     }
 });
