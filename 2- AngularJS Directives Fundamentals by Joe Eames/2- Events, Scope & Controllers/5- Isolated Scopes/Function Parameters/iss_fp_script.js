@@ -141,6 +141,11 @@ angular.module('app').directive('removeFriend', function () {
             };
             $scope.confirmRemove = function () {
                 $scope.notifyParent();
+
+                // overriding function parameters
+                /*$scope.notifyParent({
+                    friend: 'Han'
+                });*/
             };
         }
     }
