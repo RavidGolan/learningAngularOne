@@ -61,18 +61,34 @@ angular.module('app').directive('userInfoCard', function () {
         templateUrl: "iss_userInfoCard.html",
         restrict: "E",
         // scope: true, // inherited scope
-        scope: { user: '='}, // isolated scope
+        // isolated scope
+        scope: {
+            user: '=',
+            /*initialCollapsed: '@',*/
+            initialCollapsed: '@collapsed'
+        },
         controller: function ($scope) {
-            $scope.collapsed = false;
-
+            // $scope.collapsed = false;
+            $scope.collapsed = ($scope.initialCollapsed === 'true');
             $scope.knightMe = function (user) {
                 user.rank = "knight";
             };
 
             $scope.collapse = function () {
                 $scope.collapsed = !$scope.collapsed;
-            }
+            };
         }
+        /*controller: function ($scope) {
+            // $scope.collapsed = false;
+            $scope.collapsedState = ($scope.collapsed === 'true');
+            $scope.knightMe = function (user) {
+                user.rank = "knight";
+            };
+
+            $scope.collapse = function () {
+                $scope.collapsedState = !$scope.collapsedState;
+            }
+        }*/
     }
 });
 
