@@ -63,9 +63,35 @@ angular.module('app').directive('userInfoCard', function () {
         // scope: true, // inherited scope
         scope: { user: '='}, // isolated scope
         controller: function ($scope) {
+            $scope.collapsed = false;
+
             $scope.knightMe = function (user) {
                 user.rank = "knight";
+            };
+
+            $scope.collapse = function () {
+                $scope.collapsed = !$scope.collapsed;
             }
+        }
+    }
+});
+
+angular.module('app').directive('address', function () {
+    return {
+        templateUrl: 'is_address.html',
+        restrict: 'E',
+        scope: true,
+        // scope: {}, // we can't do that because the user is no longer visible to this address
+        controller: function ($scope) {
+            $scope.collapsed = false;
+
+            $scope.expand = function () {
+                $scope.collapsed = false;
+            };
+
+            $scope.collapse = function () {
+                $scope.collapsed = true;
+            };
         }
     }
 });
