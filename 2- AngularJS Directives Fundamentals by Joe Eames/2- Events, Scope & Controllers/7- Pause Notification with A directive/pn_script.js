@@ -5,8 +5,13 @@
 angular.module('app', []);
 
 angular.module('app').controller('mainCtrl', function ($scope) {
+    $scope.messages = [];
+
+
     $scope.handlePause = function () {
-        console.log("bfsajhfhsd");
+        console.log("event paused");
+
+        $scope.messages.push({text: "paused!"})
     }
 });
 
@@ -18,6 +23,8 @@ angular.module('app').directive('eventPause', function () {
         },
         link: function(scope, el, attrs) {
             el.on('pause', function (event) {
+                // So its very important whenever you have an event that fires that angular doesn’t know about,
+                // such as an HTML elements event, that you start a digest cycle by calling scope.apply
                 scope.$apply(function () {
                     scope.eventPause();
                 })

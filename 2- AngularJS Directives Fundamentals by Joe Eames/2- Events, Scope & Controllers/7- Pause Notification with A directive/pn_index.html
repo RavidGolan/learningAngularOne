@@ -15,5 +15,6 @@
         <video id="vid" controls scapebar-support event-pause="handlePause()" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
             <source src="http://media.w3.org/2010/05/sintel/trailer.mp4">
         </video>
+        <div ng-repeat="message in messages">{{message.text}}</div>
     </body>
 </html>
